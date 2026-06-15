@@ -1,0 +1,111 @@
+/**
+ * Auto-generated fields for HomeSection
+ * Generated at: 2026-06-12 18:14:45
+ */
+export const HomeSectionFields = [
+  { 
+    key: "id", 
+    label: "Id", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Id",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "title", 
+    label: "Title", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Title",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "color", 
+    label: "Color", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Color",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "sort_order", 
+    label: "Sort Order", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Sort Order",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "is_active", 
+    label: "Is Active", 
+    type: "checkbox", 
+    cell_type: "badge",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Is Active",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: [{ label: 'Active', value: 1, color: 'success' }, { label: 'Inactive', value: 0, color: 'danger' }]
+  },
+  { 
+    key: "created_at", 
+    label: "Created At", 
+    type: "date", 
+    cell_type: "date",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Created At",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: false,
+    options: null
+  },
+  { 
+    key: "updated_at", 
+    label: "Updated At", 
+    type: "date", 
+    cell_type: "date",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Updated At",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: false,
+    options: null
+  }
+];

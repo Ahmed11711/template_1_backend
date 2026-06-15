@@ -1,0 +1,37 @@
+<?php
+
+use App\Http\Controllers\Admin\Ads\AdsController;
+use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Driver\DriverController;
+use App\Http\Controllers\Admin\Driver\MyDrvierController;
+use App\Http\Controllers\Admin\Governorate\GovernorateController;
+use App\Http\Controllers\Admin\Order\OrderController;
+use App\Http\Controllers\Admin\Station\StationController;
+use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\Admin\UserDepoiteAdmin\UserDepositeAdminController;
+use App\Http\Controllers\Admin\UserDeposite\UserDepositeController;
+use App\Http\Controllers\Admin\UserOrder\UserOrderController;
+use App\Http\Controllers\Driver\DriverWalletController;
+use App\Http\Controllers\Driver\LogDriverController;
+use App\Http\Middleware\CheckJwtToken;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\HomeSection\HomeSectionController;
+use App\Http\Controllers\Admin\Products\ProductsController;
+use App\Http\Controllers\Admin\Categories\CategoriesController;
+
+
+
+
+
+
+Route::prefix('v1/admin')->group(function () {
+    Route::post('login', [LoginController::class, 'login']);
+    Route::get('me', [LoginController::class, 'me'])->middleware(CheckJwtToken::class);
+});
+
+Route::prefix('v1')->group(function () {
+    Route::apiResource('users', UserController::class)->names('user');
+    Route::apiResource('categories', CategoriesController::class)->names('categories');
+    Route::apiResource('products', ProductsController::class)->names('products');
+    Route::apiResource('home_sections', HomeSectionController::class)->names('home_section');
+});
