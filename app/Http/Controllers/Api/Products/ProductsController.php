@@ -37,7 +37,7 @@ class ProductsController extends Controller
     {
         $product = Product::where('id', $id)
             ->orWhere('slug', $id)
-            ->with(['gallery', 'category', 'primaryImage', 'variants'])
+            ->with(['gallery', 'category', 'primaryImage', 'variants', 'reviews.user:id,name,email,avatar'])
             ->first();
 
         if (!$product) {

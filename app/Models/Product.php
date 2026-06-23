@@ -55,5 +55,8 @@ class Product extends Model
 
     // App\Models\Product.php
 
-
+    public function reviews()
+    {
+        return $this->hasMany(Reviews::class, 'product_id');
+    }
 }

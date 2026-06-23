@@ -1,0 +1,113 @@
+/**
+ * Auto-generated fields for Section
+ * Generated at: 2026-06-23 22:32:06
+ */
+export const SectionFields = [
+  { 
+    key: "id", 
+    label: "Id", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Id",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "page_id", 
+    label: "Page Id", 
+    type: "select", 
+    cell_type: "relation",
+    display_field: "page.name",
+    required: 1, 
+    placeholder: "Enter Page Id",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: true,
+    endpoint: 'pages',
+    relation_fields: 'id,name',
+    options: { label: 'name', value: 'id' }
+  },
+  { 
+    key: "type", 
+    label: "Type", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Type",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "order", 
+    label: "Order", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Order",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "props", 
+    label: "Props", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Props",
+    searchable: false,
+    filterable: false,
+    sortable: false,
+    table_show: false,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "created_at", 
+    label: "Created At", 
+    type: "date", 
+    cell_type: "date",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Created At",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: false,
+    options: null
+  },
+  { 
+    key: "updated_at", 
+    label: "Updated At", 
+    type: "date", 
+    cell_type: "date",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Updated At",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: false,
+    options: null
+  }
+];

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Admin\Product;
 
+use App\Http\Resources\Admin\Reviews\ReviewsResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
@@ -59,6 +60,7 @@ class ProductResource extends JsonResource
         $data['images'] = ProductImageResource::collection($this->whenLoaded('images'));
         $data['gallery'] = ProductImageResource::collection($this->whenLoaded('gallery'));
         $data['variants'] = ProductVariantResource::collection($this->whenLoaded('variants'));
+        $data['reviews'] = ReviewsResource::collection($this->whenLoaded('reviews'));
 
         return $data;
     }

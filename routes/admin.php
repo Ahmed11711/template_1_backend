@@ -15,6 +15,11 @@ use App\Http\Controllers\Driver\DriverWalletController;
 use App\Http\Controllers\Driver\LogDriverController;
 use App\Http\Middleware\CheckJwtToken;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Admin\Section\SectionController;
+use App\Http\Controllers\Admin\Pages\PagesController;
+use App\Http\Controllers\Admin\Reviews\ReviewsController;
+use App\Http\Controllers\Admin\setting\settingController;
 use App\Http\Controllers\Admin\HomeSection\HomeSectionController;
 use App\Http\Controllers\Admin\Products\ProductsController;
 use App\Http\Controllers\Admin\Categories\CategoriesController;
@@ -34,4 +39,11 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('categories', CategoriesController::class)->names('categories');
     Route::apiResource('products', ProductsController::class)->names('products');
     Route::apiResource('home_sections', HomeSectionController::class)->names('home_section');
+    Route::apiResource('settings', settingController::class)->names('setting');
+    Route::apiResource('reviews', ReviewsController::class)->names('reviews');
+    Route::apiResource('pages', PagesController::class)->names('pages');
+    Route::apiResource('sections', SectionController::class)->names('section')->except(['store', 'update', 'get']);
+    Route::get('sections', [SectionController::class, 'byPage']);
+    Route::get('sectionss', [SectionController::class, 'index']);
+    Route::post('sections', [SectionController::class, 'bulkStore'])->name('section.store');
 });

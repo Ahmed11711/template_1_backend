@@ -19,7 +19,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
 
-    public array $searchable = [''];
+    public array $searchable = ['email', 'name', 'phone'];
     public array $filterable = ['is_active'];
     public array $allowedFields = ['id', 'name', 'email', 'phone', 'avatar', 'role', 'is_active', 'email_verified_at', 'created_at', 'updated_at'];
 
