@@ -1,6 +1,6 @@
 /**
  * Auto-generated fields for Reviews
- * Generated at: 2026-06-18 17:14:27
+ * Generated at: 2026-06-25 13:31:11
  */
 export const ReviewsFields = [
   { 
@@ -27,7 +27,7 @@ export const ReviewsFields = [
     required: 0, 
     placeholder: "Enter Product Id",
     searchable: false,
-    filterable: false,
+    filterable: true,
     sortable: true,
     table_show: false,
     form_show: true,
@@ -44,7 +44,7 @@ export const ReviewsFields = [
     required: 0, 
     placeholder: "Enter User Id",
     searchable: false,
-    filterable: false,
+    filterable: true,
     sortable: true,
     table_show: false,
     form_show: true,
@@ -76,7 +76,7 @@ export const ReviewsFields = [
     required: 1, 
     placeholder: "Enter Rating",
     searchable: false,
-    filterable: false,
+    filterable: true,
     sortable: true,
     table_show: true,
     form_show: true,
@@ -90,7 +90,7 @@ export const ReviewsFields = [
     display_field: null,
     required: 1, 
     placeholder: "Enter Comment",
-    searchable: false,
+    searchable: true,
     filterable: false,
     sortable: false,
     table_show: false,
@@ -106,7 +106,7 @@ export const ReviewsFields = [
     required: 1, 
     placeholder: "Enter Is Approved",
     searchable: false,
-    filterable: false,
+    filterable: true,
     sortable: true,
     table_show: true,
     form_show: true,

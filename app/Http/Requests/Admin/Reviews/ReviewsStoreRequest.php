@@ -17,9 +17,11 @@ class ReviewsStoreRequest extends BaseRequest
             'product_id' => 'nullable|exists:products,id|display_field:name',
             'user_id' => 'nullable|exists:users,id|display_field:name',
             'guest_name' => 'nullable|string|max:255',
-            'rating' => 'nullable|integer',
+            'rating' => 'required|integer',
             'comment' => 'required|string',
-            'is_approved' => 'nullable|integer',
+            'emoji' => 'nullable|string|max:50',
+            'is_approved' => 'required|integer',
+            'admin_reply' => 'nullable',
         ];
     }
 
@@ -31,6 +33,7 @@ class ReviewsStoreRequest extends BaseRequest
             'guest_name.max' => 'The guest name may not be greater than 255 characters.',
             'rating.required' => 'The rating field is required.',
             'comment.required' => 'The comment field is required.',
+            'emoji.max' => 'The emoji may not be greater than 50 characters.',
             'is_approved.required' => 'The is approved field is required.',
         ];
     }

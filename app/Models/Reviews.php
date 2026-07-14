@@ -9,7 +9,7 @@ class Reviews extends Model
 
     public array $searchable = ['comment'];
     public array $filterable = ['product_id', 'user_id', 'rating', 'is_approved'];
-    public array $allowedFields = ['id', 'product_id', 'user_id', 'guest_name', 'rating', 'comment', 'is_approved', 'created_at', 'updated_at'];
+    public array $allowedFields = ['id', 'product_id', 'user_id', 'guest_name', 'rating', 'comment', 'emoji', 'is_approved', 'created_at', 'updated_at'];
 
     //
 

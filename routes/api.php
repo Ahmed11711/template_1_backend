@@ -6,6 +6,9 @@ use App\Http\Controllers\Admin\UserDeposite\UserDepositeController;
 use App\Http\Controllers\Admin\UserOrder\UserOrderController;
 use App\Http\Controllers\Api\Ads\AdsController;
 use App\Http\Controllers\Api\Category\CategoryProductController;
+use App\Http\Controllers\Api\Coupon\CouponController;
+use App\Http\Controllers\Api\Governorate\GovernorateControlle;
+use App\Http\Controllers\Api\PaymentGetway\PaymentgetwayController;
 use App\Http\Controllers\Api\Products\ProductsController;
 use App\Http\Controllers\Api\Reviews\ReviewsApiController;
 use App\Http\Controllers\Api\Station\StationController;
@@ -15,6 +18,8 @@ use App\Http\Controllers\Auth\OtpController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Middleware\CheckJwtToken;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 
@@ -77,8 +82,13 @@ Route::group(['prefix' => 'v1/front'], function () {
     Route::get('categories', [CategoriesController::class, 'index']);
     Route::get('categoriesWithProduct', [CategoryProductController::class, 'index']);
     Route::get('home-sections', [ProductsController::class, 'index']);
-    Route::get('products/{id}', [ProductsController::class, 'show']);
+    Route::get('products/{slug}', [ProductsController::class, 'show']);
+    Route::get('payment-getway', [PaymentgetwayController::class, 'index']);
+    Route::get('coupons', [CouponController::class, 'index']);
+    Route::get('governorate', [GovernorateControlle::class, 'index']);
     Route::middleware(CheckJwtToken::class)->group(function () {
+        Route::post('coupons/apply', [CouponController::class, 'apply']); // <-- الجديد
+
         Route::post('reviews', [ReviewsApiController::class, 'store']);
         Route::put('reviews/{review}', [ReviewsApiController::class, 'update']);
     });

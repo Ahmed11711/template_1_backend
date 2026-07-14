@@ -2,6 +2,21 @@
 
 namespace App\Providers;
 
+use App\Repositories\ShippingGovernorateBranch\ShippingGovernorateBranchRepositoryInterface;
+use App\Repositories\ShippingGovernorateBranch\ShippingGovernorateBranchRepository;
+
+use App\Repositories\ShippingGovernorate\ShippingGovernorateRepositoryInterface;
+use App\Repositories\ShippingGovernorate\ShippingGovernorateRepository;
+
+use App\Repositories\ShippingMethod\ShippingMethodRepositoryInterface;
+use App\Repositories\ShippingMethod\ShippingMethodRepository;
+
+use App\Repositories\Coupon\CouponRepositoryInterface;
+use App\Repositories\Coupon\CouponRepository;
+
+use App\Repositories\PaymentGateway\PaymentGatewayRepositoryInterface;
+use App\Repositories\PaymentGateway\PaymentGatewayRepository;
+
 
 use App\Repositories\Section\SectionRepositoryInterface;
 use App\Repositories\Section\SectionRepository;
@@ -45,7 +60,11 @@ $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
         $this->app->bind(ReviewsRepositoryInterface::class, ReviewsRepository::class);
         $this->app->bind(PagesRepositoryInterface::class, PagesRepository::class);
         $this->app->bind(SectionRepositoryInterface::class, SectionRepository::class);
-        
+        $this->app->bind(PaymentGatewayRepositoryInterface::class, PaymentGatewayRepository::class);
+        $this->app->bind(CouponRepositoryInterface::class, CouponRepository::class);
+        $this->app->bind(ShippingMethodRepositoryInterface::class, ShippingMethodRepository::class);
+        $this->app->bind(ShippingGovernorateRepositoryInterface::class, ShippingGovernorateRepository::class);
+        $this->app->bind(ShippingGovernorateBranchRepositoryInterface::class, ShippingGovernorateBranchRepository::class);
 }
 
     /**

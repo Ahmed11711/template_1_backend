@@ -19,7 +19,10 @@ class ReviewsUpdateRequest extends BaseRequest
             'guest_name' => 'sometimes|nullable|string|max:255',
             'rating' => 'sometimes|required|integer',
             'comment' => 'sometimes|required|string',
+            'emoji' => 'sometimes|nullable|string|max:50',
             'is_approved' => 'sometimes|required|integer',
+            'admin_reply' => 'nullable',
+
         ];
     }
 
@@ -31,6 +34,7 @@ class ReviewsUpdateRequest extends BaseRequest
             'guest_name.max' => 'The guest name may not be greater than 255 characters.',
             'rating.required' => 'The rating field is required.',
             'comment.required' => 'The comment field is required.',
+            'emoji.max' => 'The emoji may not be greater than 50 characters.',
             'is_approved.required' => 'The is approved field is required.',
         ];
     }

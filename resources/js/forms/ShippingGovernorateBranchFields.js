@@ -1,0 +1,113 @@
+/**
+ * Auto-generated fields for ShippingGovernorateBranch
+ * Generated at: 2026-07-04 00:17:58
+ */
+export const ShippingGovernorateBranchFields = [
+  { 
+    key: "id", 
+    label: "Id", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Id",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "shipping_governorate_id", 
+    label: "Shipping Governorate Id", 
+    type: "select", 
+    cell_type: "relation",
+    display_field: "shippingGovernorate.name",
+    required: 1, 
+    placeholder: "Enter Shipping Governorate Id",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: true,
+    endpoint: 'shipping_governorates',
+    relation_fields: 'id,name',
+    options: { label: 'name', value: 'id' }
+  },
+  { 
+    key: "name", 
+    label: "Name", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Name",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "price", 
+    label: "Price", 
+    type: "text", 
+    cell_type: "text",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Price",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: null
+  },
+  { 
+    key: "is_active", 
+    label: "Is Active", 
+    type: "checkbox", 
+    cell_type: "badge",
+    display_field: null,
+    required: 1, 
+    placeholder: "Enter Is Active",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: true,
+    options: [{ label: 'Active', value: 1, color: 'success' }, { label: 'Inactive', value: 0, color: 'danger' }]
+  },
+  { 
+    key: "created_at", 
+    label: "Created At", 
+    type: "date", 
+    cell_type: "date",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Created At",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: true,
+    form_show: false,
+    options: null
+  },
+  { 
+    key: "updated_at", 
+    label: "Updated At", 
+    type: "date", 
+    cell_type: "date",
+    display_field: null,
+    required: 0, 
+    placeholder: "Enter Updated At",
+    searchable: false,
+    filterable: false,
+    sortable: true,
+    table_show: false,
+    form_show: false,
+    options: null
+  }
+];

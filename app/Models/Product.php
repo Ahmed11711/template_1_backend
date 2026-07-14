@@ -4,18 +4,62 @@ namespace App\Models;
 
 use App\Casts\ImageCast;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
-
     public array $searchable = ['short_description'];
     public array $filterable = ['category_id', 'track_stock', 'is_active', 'is_featured'];
     public array $allowedFields = ['id', 'category_id', 'name', 'slug', 'short_description', 'description', 'sku', 'price', 'compare_price', 'cost_price', 'track_stock', 'stock_quantity', 'low_stock_threshold', 'is_active', 'is_featured', 'sort_order', 'meta_title', 'meta_description', 'views_count', 'average_rating', 'reviews_count', 'created_at', 'updated_at'];
+
     protected function casts(): array
     {
         return [
             'image' => ImageCast::class,
         ];
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($product) {
+            $product->slug = static::generateUniqueSlug($product->name);
+        });
+
+        static::updating(function ($product) {
+            if ($product->isDirty('name')) {
+                $product->slug = static::generateUniqueSlug($product->name, $product->id);
+            }
+        });
+    }
+
+    protected static function generateUniqueSlug(string $name, $ignoreId = null): string
+    {
+        $slug = Str::slug($name);
+        $originalSlug = $slug;
+        $count = 1;
+
+        $query = static::where('slug', $slug);
+        if ($ignoreId) {
+            $query->where('id', '!=', $ignoreId);
+        }
+
+        while ($query->exists()) {
+            $slug = "{$originalSlug}-{$count}";
+            $count++;
+            $query = static::where('slug', $slug);
+            if ($ignoreId) {
+                $query->where('id', '!=', $ignoreId);
+            }
+        }
+
+        return $slug;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function sections()
@@ -33,6 +77,7 @@ class Product extends Model
     {
         return $this->hasMany(ProductImage::class, 'product_id');
     }
+
     public function images()
     {
         return $this->hasMany(ProductImage::class, 'product_id');
@@ -52,8 +97,6 @@ class Product extends Model
     {
         return $this->hasOne(ProductImage::class)->oldestOfMany();
     }
-
-    // App\Models\Product.php
 
     public function reviews()
     {

@@ -11,6 +11,7 @@ class ReviewsFactory extends Factory {
             'guest_name' => $this->faker->word,
             'rating' => $this->faker->word,
             'comment' => $this->faker->word,
+            'emoji' => $this->faker->word,
             'is_approved' => $this->faker->word,
         ];
     }

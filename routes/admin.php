@@ -15,6 +15,11 @@ use App\Http\Controllers\Driver\DriverWalletController;
 use App\Http\Controllers\Driver\LogDriverController;
 use App\Http\Middleware\CheckJwtToken;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ShippingGovernorateBranch\ShippingGovernorateBranchController;
+use App\Http\Controllers\Admin\ShippingGovernorate\ShippingGovernorateController;
+use App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController;
+use App\Http\Controllers\Admin\Coupon\CouponController;
+use App\Http\Controllers\Admin\PaymentGateway\PaymentGatewayController;
 
 use App\Http\Controllers\Admin\Section\SectionController;
 use App\Http\Controllers\Admin\Pages\PagesController;
@@ -46,4 +51,9 @@ Route::prefix('v1')->group(function () {
     Route::get('sections', [SectionController::class, 'byPage']);
     Route::get('sectionss', [SectionController::class, 'index']);
     Route::post('sections', [SectionController::class, 'bulkStore'])->name('section.store');
+    Route::apiResource('payment_gateways', PaymentGatewayController::class)->names('payment_gateway');
+    Route::apiResource('coupons', CouponController::class)->names('coupon');
+    Route::apiResource('shipping_methods', ShippingMethodController::class)->names('shipping_method');
+    Route::apiResource('shipping_governorates', ShippingGovernorateController::class)->names('shipping_governorate');
+    Route::apiResource('shipping_governorate_branches', ShippingGovernorateBranchController::class)->names('shipping_governorate_branch');
 });

@@ -5,11 +5,11 @@ This documentation is auto-generated for the **reviews** table.
 ### 🚀 Endpoints
 | Action | Method | Endpoint | Auth |
 | :--- | :--- | :--- | :--- |
-| List All | `GET` | `/reviews` | Bearer |
-| View One | `GET` | `/reviews/{id}` | Bearer |
-| Create | `POST` | `/reviews` | Bearer |
-| Update | `PUT` | `/reviews/{id}` | Bearer |
-| Delete | `DELETE` | `/reviews/{id}` | Bearer |
+| List All | `GET` | `/api/v1/reviews` | Bearer |
+| View One | `GET` | `/api/v1/reviews/{id}` | Bearer |
+| Create | `POST` | `/api/v1/reviews` | Bearer |
+| Update | `PUT` | `/api/v1/reviews/{id}` | Bearer |
+| Delete | `DELETE` | `/api/v1/reviews/{id}` | Bearer |
 
 ### 📋 Database Schema
 | Column | Type | Description |
@@ -20,6 +20,7 @@ This documentation is auto-generated for the **reviews** table.
 | `guest_name` | *varchar* | Field from database |
 | `rating` | *tinyint* | Field from database |
 | `comment` | *text* | Field from database |
+| `emoji` | *varchar* | Field from database |
 | `is_approved` | *tinyint* | Field from database |
 | `created_at` | *timestamp* | Field from database |
 | `updated_at` | *timestamp* | Field from database |

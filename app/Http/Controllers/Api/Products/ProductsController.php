@@ -33,10 +33,10 @@ class ProductsController extends Controller
         return $this->successResponse($sections, "list-of-products");
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $product = Product::where('id', $id)
-            ->orWhere('slug', $id)
+        $product = Product::where('slug', $slug)
+
             ->with(['gallery', 'category', 'primaryImage', 'variants', 'reviews.user:id,name,email,avatar'])
             ->first();
 

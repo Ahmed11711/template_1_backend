@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('emoji')->nullable();
 
             $table->boolean('is_approved')->default(true);
+            $table->text('admin_reply')->nullable();
 
             $table->timestamps();
 

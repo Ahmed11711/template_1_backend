@@ -22,5 +22,9 @@ class ReviewsController extends BaseController
         $this->storeRequestClass = ReviewsStoreRequest::class;
         $this->updateRequestClass = ReviewsUpdateRequest::class;
         $this->resourceClass = ReviewsResource::class;
+        $this->withRelationships = [
+            'user:id,name,avatar',
+            'product:id,name'
+        ];
     }
 }
